@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-slate-950 text-slate-100 antialiased;
+}
+
+.section-padding {
+  @apply py-16 md:py-24;
+}
+
+.container-default {
+  @apply max-w-5xl mx-auto px-4;
+}
+
+.card {
+  @apply bg-slate-900/70 border border-slate-800 rounded-2xl p-6 shadow-lg shadow-slate-950/50;
+}
