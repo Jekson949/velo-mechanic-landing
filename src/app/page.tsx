@@ -58,7 +58,7 @@ export default async function HomePage() {
         <ContactSection />
         <footer className="border-t border-slate-800 bg-slate-950 py-6">
           <div className="container-default flex flex-col justify-between gap-3 text-xs text-slate-500 md:flex-row">
-            <span>© {new Date().getFullYear()} Веломеханік у Львові</span>
+            <span>© {new Date().getFullYear()} Веломеханік у Мукачові</span>
             <span>Сайт виконаний з фокусом на швидкість і SEO.</span>
           </div>
         </footer>

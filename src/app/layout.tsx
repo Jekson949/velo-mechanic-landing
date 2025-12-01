@@ -1,30 +1,32 @@
-import type { Metadata } from 'next';
-import './globals.css';
+import type { Metadata } from "next";
+import "./globals.css";
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://velo-mechanic.example.com'),
-  title: 'Веломеханік у Львові | Прокачка гідравліки, ТО вилки, ремонт велосипедів',
+  metadataBase: new URL("https://velo-mechanic.example.com"),
+  title:
+    "Веломеханік у Мукачові | Прокачка гідравліки, ТО вилки, ремонт велосипедів",
   description:
-    'Професійний веломеханік у Львові: прокачка гідравлічних гальм, повне ТО повітряно-масляної вилки, ремонт та налаштування велосипедів. Швидко, якісно, з гарантією.',
+    "Професійний веломеханік у Мукачові: прокачка гідравлічних гальм, повне ТО повітряно-масляної вилки, ремонт та налаштування велосипедів. Швидко, якісно, з гарантією.",
   openGraph: {
-    title: 'Веломеханік у Львові | Прокачка гідравліки, ТО вилки, ремонт велосипедів',
+    title:
+      "Веломеханік у Мукачові | Прокачка гідравліки, ТО вилки, ремонт велосипедів",
     description:
-      'Професійний веломеханік: гідравлічні гальма, повітряно-масляні вилки, повний сервіс велосипеда.',
-    type: 'website',
-    url: 'https://velo-mechanic.example.com',
-    locale: 'uk_UA'
+      "Професійний веломеханік: гідравлічні гальма, повітряно-масляні вилки, повний сервіс велосипеда.",
+    type: "website",
+    url: "https://velo-mechanic.example.com",
+    locale: "uk_UA",
   },
   alternates: {
-    canonical: '/'
+    canonical: "/",
   },
   robots: {
     index: true,
-    follow: true
-  }
+    follow: true,
+  },
 };
 
 export default function RootLayout({
-  children
+  children,
 }: {
   children: React.ReactNode;
 }) {
