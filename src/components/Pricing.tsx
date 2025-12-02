@@ -17,18 +17,20 @@ export default function Pricing() {
               Прокачка одного контура (одна гальмівна ручка + каліпер).
             </p>
             <p className="mb-1 text-2xl font-semibold text-emerald-400">
-              від 500 ₴
+              від 250 ₴
             </p>
             <p className="text-xs text-slate-400">Рідина оплачується окремо.</p>
           </div>
 
           <div className="card">
-            <h3 className="mb-2 text-lg font-semibold">ТО повітряно-масляної вилки</h3>
+            <h3 className="mb-2 text-lg font-semibold">
+              ТО повітряно-масляної вилки
+            </h3>
             <p className="mb-4 text-sm text-slate-300">
               Повний розбір, чистка, заміна мастила, витратних матеріалів.
             </p>
             <p className="mb-1 text-2xl font-semibold text-emerald-400">
-              від 1500 ₴
+              від 1000 ₴
             </p>
             <p className="text-xs text-slate-400">
               Вартість сальників/kit – за ціною постачальника.
