@@ -18,16 +18,16 @@ function extractVideoId(url: string): string | null {
 export default function YoutubeShorts() {
   const shorts = [
     {
-      url: "https://www.youtube.com/shorts/hKRL41FLaxg",
-      title: "DT Swiss 240 #mtb #shorts #dtswiss",
+      url: "https://www.youtube.com/shorts/XH5PUWi1lTU",
+      title: "Sram guide ultimate 🔥 #mtb #service #downhillmtb",
     },
     {
       url: "https://www.youtube.com/shorts/LeWuPtnzXjY",
       title: "Fox 36 Service #mtb #fork",
     },
     {
-      url: "https://www.youtube.com/shorts/dCLG2qWs-AU",
-      title: "SRAM GX #mtb #downhill",
+      url: "https://www.youtube.com/shorts/BLZnoXCFMMQ",
+      title: "Good👌🏻 #shimano #shimanoxtr#sram #shimanoxt #mtb #service",
     },
   ];
 
