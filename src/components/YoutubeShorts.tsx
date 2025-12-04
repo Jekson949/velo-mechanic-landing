@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 
 function extractVideoId(url: string): string | null {
   const shortsMatch = url.match(/shorts\/([a-zA-Z0-9_-]+)/);
@@ -15,22 +15,80 @@ function extractVideoId(url: string): string | null {
   return null;
 }
 
-export default function YoutubeShorts() {
-  const shorts = [
-    {
-      url: "https://www.youtube.com/shorts/XH5PUWi1lTU",
-      title: "Sram guide ultimate 🔥 #mtb #service #downhillmtb",
-    },
-    {
-      url: "https://www.youtube.com/shorts/LeWuPtnzXjY",
-      title: "Fox 36 Service #mtb #fork",
-    },
-    {
-      url: "https://www.youtube.com/shorts/BLZnoXCFMMQ",
-      title: "Good👌🏻 #shimano #shimanoxtr#sram #shimanoxt #mtb #service",
-    },
-  ];
+type ShortItem = {
+  url: string;
+  title: string;
+};
 
+const shorts: ShortItem[] = [
+  {
+    url: "https://www.youtube.com/shorts/XH5PUWi1lTU",
+    title: "Sram guide ultimate 🔥 #mtb #service #downhillmtb",
+  },
+  {
+    url: "https://www.youtube.com/shorts/LeWuPtnzXjY",
+    title: "Fox 36 Service #mtb #fork",
+  },
+  {
+    url: "https://www.youtube.com/shorts/BLZnoXCFMMQ",
+    title: "Good👌🏻 #shimano #shimanoxtr#sram #shimanoxt #mtb #service",
+  },
+];
+
+function ShortCard({ item }: { item: ShortItem }) {
+  const id = extractVideoId(item.url);
+  const [playing, setPlaying] = useState(false);
+
+  if (!id) return null;
+
+  return (
+    <article
+      className="
+        overflow-hidden rounded-2xl border border-slate-800 
+        bg-slate-900 flex flex-col p-0
+      "
+    >
+      {/* Превью / видео */}
+      <div
+        className="relative aspect-[9/16] bg-black cursor-pointer group"
+        onClick={() => setPlaying(true)}
+      >
+        {playing ? (
+          <iframe
+            className="absolute inset-0 h-full w-full"
+            src={`https://www.youtube.com/embed/${id}?autoplay=1`}
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+            loading="lazy"
+          />
+        ) : (
+          <>
+            {/* Лёгкая превью-картинка вместо сразу iframe */}
+            <img
+              src={`https://i.ytimg.com/vi/${id}/hqdefault.jpg`}
+              alt={item.title}
+              className="absolute inset-0 h-full w-full object-cover"
+              loading="lazy"
+            />
+            {/* Красивая кнопка Play */}
+            <div className="absolute inset-0 flex items-center justify-center">
+              <div className="h-14 w-14 rounded-full bg-black/70 flex items-center justify-center group-hover:bg-black/80 transition">
+                <div className="ml-1 h-0 w-0 border-y-[8px] border-y-transparent border-l-[14px] border-l-white border-r-0" />
+              </div>
+            </div>
+          </>
+        )}
+      </div>
+
+      {/* Подпись снизу, как под фотками */}
+      <div className="border-t border-slate-800 px-3 py-2">
+        <p className="text-sm text-slate-100 line-clamp-2">{item.title}</p>
+      </div>
+    </article>
+  );
+}
+
+export default function YoutubeShorts() {
   return (
     <section
       id="shorts"
@@ -46,36 +104,9 @@ export default function YoutubeShorts() {
         </p>
 
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {shorts.map((item, i) => {
-            const id = extractVideoId(item.url);
-            if (!id) return null;
-
-            return (
-              <article
-                key={i}
-                className="
-                  overflow-hidden rounded-2xl border border-slate-800 
-                  bg-slate-900 flex flex-col p-0   /* УБИРАЕМ PADDING */
-                "
-              >
-                <div className="relative aspect-[9/16] bg-black">
-                  <iframe
-                    className="absolute inset-0 h-full w-full"
-                    src={`https://www.youtube.com/embed/${id}`}
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                    loading="lazy"
-                  />
-                </div>
-
-                <div className="border-t border-slate-800 px-3 py-2">
-                  <p className="text-sm text-slate-100 line-clamp-2">
-                    {item.title}
-                  </p>
-                </div>
-              </article>
-            );
-          })}
+          {shorts.map((item) => (
+            <ShortCard key={item.url} item={item} />
+          ))}
         </div>
       </div>
     </section>
