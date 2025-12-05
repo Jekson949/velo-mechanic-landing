@@ -52,7 +52,7 @@ export default function HomePage() {
         <WhyUs />
         <Testimonials />
         <ContactSection />
-        <footer className="border-t border-slate-800 bg-slate-950 py-6">
+        <footer className="border-t border-slate-700 bg-slate-950 py-6 text-white">
           <div className="container-default flex flex-col justify-between gap-3 text-xs text-slate-500 md:flex-row">
             <span>© {new Date().getFullYear()} Веломеханік у Мукачево</span>
           </div>
