@@ -38,11 +38,7 @@ export default function ContactSection() {
 
         <div className="card">
           <h3 className="mb-3 text-xl font-semibold">Форма заявки</h3>
-          <form
-            action="https://formspree.io/f/YOUR_FORM_ID"
-            method="POST"
-            className="space-y-4"
-          >
+          <form action="/api/contact" method="POST" className="space-y-4">
             <label className="block text-sm">
               <span className="mb-1 inline-block text-slate-200">
                 Ім&apos;я
@@ -75,12 +71,15 @@ export default function ContactSection() {
               />
             </label>
 
-            <button
+            <a
+              href="https://t.me/gaikxs"
+              target="_blank"
+              rel="noopener noreferrer"
               type="submit"
               className="inline-flex w-full items-center justify-center rounded-full bg-emerald-500 px-6 py-2.5 text-sm font-semibold text-slate-950 shadow-lg shadow-emerald-500/30 transition hover:bg-emerald-400"
             >
               Надіслати заявку
-            </button>
+            </a>
 
             <p className="text-xs text-slate-400">
               Надсилаючи форму, ви погоджуєтесь на обробку контактних даних
