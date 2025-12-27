@@ -20,7 +20,9 @@ export default function Hero() {
 
           <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
             <Link
-              href="#contact"
+              href="https://t.me/gaikxs"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center justify-center rounded-full bg-emerald-500 px-6 py-3 text-sm font-semibold text-slate-950 shadow-lg shadow-emerald-500/30 transition hover:bg-emerald-400"
             >
               Записатися на сервіс
